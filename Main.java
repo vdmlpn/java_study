@@ -1,17 +1,22 @@
+import java.util.Scanner;
 
 public class Main{
+    static int calcGCD(int num1, int num2) {
+        if (num2!=0)
+            return calcGCD(num2, num1%num2);
+        else 
+            return num1;
+    }
+
     public static void main(String []args) {
-        String str1 = "The weather is fine.";
-        char[] arrStr = {'s','u','n','n','y'};
-        String str2 = new String (arrStr);
-        System.out.println("Old string: " +str1);
-        String str1_changed = str1.replace("fine", str2.toUpperCase());
-        System.out.println("Changed string will be: " +str1_changed);
-        System.out.println("The length of the new string is " +str1_changed.length());
+        System.out.print("Enter the first positive integer value: ");
+        Scanner sc = new Scanner(System.in);
+        int num1 = sc.nextInt();
+        System.out.print("Enter the second positive integer value: ");
+        int num2 = sc.nextInt();
+        System.out.println ("The greatest common divisor of " +num1+ " and " +num2+ " is " +77calcGCD(num1, num2));
 
-
-
-        
-
+        sc.close();
+    
     }
 }
